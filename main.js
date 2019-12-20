@@ -27,8 +27,8 @@ function toCamelCase(str) {
         });
    
 } 
-toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
-toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
+toCamelCase("the-stealth-warrior")
+toCamelCase("The_Stealth_Warrior") 
 
 
 // Task 4 

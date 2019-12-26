@@ -81,3 +81,18 @@ function smallest (...args) {
     console.log(max);
 }
 smallest(2, 0.1, -5, 100, 3)
+
+//Task 7
+
+var baseArray = [10, 20, 30, 40, 50];
+var newArray = transform(baseArray);
+
+function transform(array) {
+    return baseArray.map(function (item) {
+        return function () {
+            return item;
+        }
+    })
+}
+
+newArray[3]();

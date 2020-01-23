@@ -96,3 +96,44 @@ function transform(array) {
 }
 
 newArray[3]();
+
+//Task 8
+function sum() {
+  var args = [].slice.call(arguments);
+  if (args.length === 0) {
+    return 0;
+  } else {
+    return args.pop() + sum.apply(this, args);
+  }
+}
+console.log(sum(1, 3, 5, 7));
+
+// Task 9
+function countDown(c) {
+  setTimeout(function() {
+    console.log(c);
+    if (c > 0) {
+        setTimeout(countDown(c - 1), 1000);
+    }
+  }, 1000)
+}
+
+countDown(3);
+
+// Task 10
+var user = {
+    firstName: 'Elle',
+    surName: 'A.'
+};
+Function.prototype.myBind = function(userInfo) {
+  var fn = this;
+  return function() {
+    return fn.apply(userInfo, arguments);
+  };
+};
+
+function sayName() {
+    console.log(`Привет, ${this.firstName} ${this.surName} :)`)
+}
+var greeting = sayName.myBind(user);
+greeting();
